@@ -1,21 +1,20 @@
 package api.dnevnik.ru;
 
-
-import api.dnevnik.ru.methods.DnevnikMethods;
+import api.dnevnik.ru.storage.Storage;
 import okhttp3.OkHttpClient;
 
 public interface IDnevnik {
 
-    String getAccessToken();
+    Storage getStorage();
 
-    String getRefreshToken();
-
-    long getUserId();
+    DnevnikApi api();
 
     OkHttpClient getDefaultClient();
 
+    String getAccessToken();
+
     boolean isAuthenticated();
 
-    DnevnikMethods methods();
+    String refreshAccessToken();
 
 }
