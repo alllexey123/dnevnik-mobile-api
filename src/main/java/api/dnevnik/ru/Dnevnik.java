@@ -4,12 +4,14 @@ import api.dnevnik.ru.exceptions.DnevnikApiException;
 import api.dnevnik.ru.model.request.ValidatePaymentRequest;
 import api.dnevnik.ru.model.response.BasicResponse;
 import api.dnevnik.ru.model.response.feed.FeedResponse;
+import api.dnevnik.ru.model.response.feed.items.FeedItem;
 import api.dnevnik.ru.model.response.info.UserContext;
 import api.dnevnik.ru.networking.AccessTokenInterceptor;
 import api.dnevnik.ru.model.request.LoginRequest;
 import api.dnevnik.ru.model.response.info.LoginResponse;
 import api.dnevnik.ru.storage.DefaultStorage;
 import api.dnevnik.ru.storage.Storage;
+import api.dnevnik.ru.utils.FeedItemDeserializer;
 import api.dnevnik.ru.utils.LocalDateDeserializer;
 import api.dnevnik.ru.utils.LocalDateTimeDeserializer;
 import api.dnevnik.ru.utils.OffsetDateTimeDeserializer;
@@ -35,6 +37,7 @@ public class Dnevnik implements IDnevnik {
             .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer())
             .registerTypeAdapter(LocalDate.class, new LocalDateDeserializer())
             .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeDeserializer())
+            .registerTypeAdapter(FeedItem.class, new FeedItemDeserializer())
             .create();
 
     protected OkHttpClient defaultClient;
