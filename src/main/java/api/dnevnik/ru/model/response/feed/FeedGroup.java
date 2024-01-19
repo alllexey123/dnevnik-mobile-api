@@ -1,14 +1,16 @@
 package api.dnevnik.ru.model.response.feed;
 
 import api.dnevnik.ru.model.response.feed.rating.RatingColor;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedGroup {
 
-    String name;
+    private String name;
 
-    RatingColor color;
+    private RatingColor color;
 
-    boolean isContextGroup;
+    private Boolean isContextGroup;
 }

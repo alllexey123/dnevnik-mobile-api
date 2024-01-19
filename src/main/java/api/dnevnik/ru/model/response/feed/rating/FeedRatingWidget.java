@@ -1,20 +1,22 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
 import api.dnevnik.ru.model.response.feed.FeedTopRating;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedRatingWidget {
 
-    FeedCommonGroupRating commonGroupRatingEvent;
+    private FeedCommonGroupRating commonGroupRatingEvent;
 
-    FeedCommonParallelRating commonParallelRatingEvent;
+    private FeedCommonParallelRating commonParallelRatingEvent;
 
-    FeedTopRating topRatingEvent;
+    private FeedTopRating topRatingEvent;
 
-    List<FeedGroupRatingBySubject> groupRatingBySubjectEvents;
+    private List<FeedGroupRatingBySubject> groupRatingBySubjectEvents;
 
-    List<FeedPersonalRatingBySubject> personalRatingBySubjectEvents;
+    private List<FeedPersonalRatingBySubject> personalRatingBySubjectEvents;
 }

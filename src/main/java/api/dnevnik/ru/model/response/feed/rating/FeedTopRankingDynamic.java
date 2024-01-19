@@ -2,14 +2,16 @@ package api.dnevnik.ru.model.response.feed.rating;
 
 import api.dnevnik.ru.model.response.MetaData;
 import api.dnevnik.ru.model.response.Restrictable;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedTopRankingDynamic implements Restrictable {
 
-    List<FeedTopMarkChange> values;
+    private List<FeedTopMarkChange> values;
 
-    MetaData metadata;
+    private MetaData metadata;
 }

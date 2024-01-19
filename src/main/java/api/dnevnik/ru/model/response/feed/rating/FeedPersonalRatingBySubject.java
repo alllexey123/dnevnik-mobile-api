@@ -1,14 +1,16 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
 import api.dnevnik.ru.model.response.feed.FeedPlace;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedPersonalRatingBySubject {
 
-    FeedRatingTrendExtended trend;
+    private FeedRatingTrendExtended trend;
 
-    FeedRatingSubject subject;
+    private FeedRatingSubject subject;
 
-    FeedPlace place;
+    private FeedPlace place;
 }

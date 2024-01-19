@@ -1,13 +1,13 @@
 package api.dnevnik.ru.model;
 
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 public class SummativeMark {
 
-    Float quarterMark;
+    private Float quarterMark;
 
-    Float sectionMark;
+    private Float sectionMark;
 
-    String summativeMarkMood;
+    private String summativeMarkMood;
 }

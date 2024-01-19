@@ -1,19 +1,20 @@
 package api.dnevnik.ru.model.response.info;
 
-import lombok.Data;
+import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Data
+@NoArgsConstructor
 public class Credentials {
 
-    private final String accessToken;
+    private String accessToken;
 
-    private final LocalDateTime expiresDate;
+    private OffsetDateTime expiresDate;
 
-    private final String refreshToken;
+    private String refreshToken;
 
-    private final Long userId;
+    private Long userId;
 
-    private final String scope;
+    private String scope;
 }

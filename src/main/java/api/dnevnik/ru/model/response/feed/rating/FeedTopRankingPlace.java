@@ -1,13 +1,15 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedTopRankingPlace {
 
-    String imageUrl;
+    private String imageUrl;
 
-    int place;
+    private Integer place;
 
-    boolean isContextUser;
+    private Boolean isContextUser;
 }

@@ -1,16 +1,18 @@
 package api.dnevnik.ru.model.response.feed.items;
 
-import api.dnevnik.ru.model.response.lessons.Mark;
-import lombok.Value;
+import api.dnevnik.ru.model.response.marks.Mark;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedAskTeacherContent implements FeedItemContent {
 
-    Mark mark;
+    private Mark mark;
 
-    String text;
+    private String text;
 
-    long lessonId;
+    private Long lessonId;
 
-    String buttonText;
+    private String buttonText;
 }

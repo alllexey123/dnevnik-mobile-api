@@ -1,11 +1,11 @@
 package api.dnevnik.ru.model.response.info;
 
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 public class Group {
 
-    long id;
+    private long id;
 
-    String name;
+    private String name;
 }

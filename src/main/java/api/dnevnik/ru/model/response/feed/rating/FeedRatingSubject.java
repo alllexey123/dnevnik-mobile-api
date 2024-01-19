@@ -1,11 +1,13 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedRatingSubject {
 
-    long id;
+    private Long id;
 
-    String name;
+    private String name;
 }

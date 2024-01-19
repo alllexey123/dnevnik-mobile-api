@@ -1,14 +1,16 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
 import api.dnevnik.ru.model.response.feed.FeedGroup;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedGroupRatingBySubject {
 
-    FeedRatingTrendExtended trend;
+    private FeedRatingTrendExtended trend;
 
-    FeedRatingSubject subject;
+    private FeedRatingSubject subject;
 
-    FeedGroup group;
+    private FeedGroup group;
 }

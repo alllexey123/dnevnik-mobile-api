@@ -3,16 +3,18 @@ package api.dnevnik.ru.model.response.feed;
 import api.dnevnik.ru.model.response.feed.rating.FeedTopRankingDynamic;
 import api.dnevnik.ru.model.response.feed.rating.FeedTopRankingPlaces;
 import api.dnevnik.ru.model.response.feed.rating.FeedTopRatingTitle;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedTopRating {
 
-    FeedTopRatingTitle title;
+    private FeedTopRatingTitle title;
 
-    FeedTopRankingPlaces topRankingPlace;
+    private FeedTopRankingPlaces topRankingPlace;
 
-    FeedTopRankingDynamic topRankingDynamic;
+    private FeedTopRankingDynamic topRankingDynamic;
 
-    long subjectId;
+    private Long subjectId;
 }

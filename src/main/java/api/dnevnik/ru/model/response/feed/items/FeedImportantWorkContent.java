@@ -1,10 +1,12 @@
 package api.dnevnik.ru.model.response.feed.items;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedImportantWorkContent implements FeedItemContent {
-    List<ImportantWork> works;
+    private List<ImportantWork> works;
 }

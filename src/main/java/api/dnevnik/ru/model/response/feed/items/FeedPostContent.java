@@ -1,47 +1,49 @@
 package api.dnevnik.ru.model.response.feed.items;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.OffsetDateTime;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedPostContent implements FeedItemContent {
 
-    long id;
+    private Long id;
 
-    String eventKey;
+    private String eventKey;
 
-    String topicEventKey;
+    private String topicEventKey;
 
-    String topicLogoUrl;
+    private String topicLogoUrl;
 
-    String eventUrl;
+    private String eventUrl;
 
-    String eventSign;
+    private String eventSign;
 
-    String title;
+    private String title;
 
-    String subtitle;
+    private String subtitle;
 
-    String text;
+    private String text;
 
-    OffsetDateTime createdDateTime;
+    private OffsetDateTime createdDateTime;
 
     boolean isReaded;
 
-    int commentsCount;
+    private Integer commentsCount;
 
-    String authorImageUrl;
+    private String authorImageUrl;
 
-    String authorFirstName;
+    private String authorFirstName;
 
-    String authorMiddleName;
+    private String authorMiddleName;
 
-    String authorLastName;
+    private String authorLastName;
 
-    String authorName;
+    private String authorName;
 
-    String previewUrl;
+    private String previewUrl;
 
-    boolean isNew;
+    private Boolean isNew;
 }

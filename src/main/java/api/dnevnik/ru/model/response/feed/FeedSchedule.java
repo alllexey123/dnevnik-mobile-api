@@ -1,16 +1,18 @@
 package api.dnevnik.ru.model.response.feed;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedSchedule {
 
-    LocalDate nextLessonDate;
+    private LocalDate nextLessonDate;
 
-    List<FeedLesson> todayLessons;
+    private List<FeedLesson> todayLessons;
 
-    List<FeedLesson> tomorrowLessons;
+    private List<FeedLesson> tomorrowLessons;
 }

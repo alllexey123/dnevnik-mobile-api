@@ -1,12 +1,14 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
 import api.dnevnik.ru.model.response.Trend;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedRatingMarkChange {
 
-    Trend trend;
+    private Trend trend;
 
-    String value;
+    private String value;
 }

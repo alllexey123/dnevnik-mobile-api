@@ -1,11 +1,13 @@
 package api.dnevnik.ru.model.response.feed.items;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedItem {
 
-    FeedItemType type;
+    private FeedItemType type;
 
-    FeedItemContent content;
+    private FeedItemContent content;
 }

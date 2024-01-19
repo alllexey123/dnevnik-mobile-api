@@ -1,15 +1,15 @@
 package api.dnevnik.ru.model.response;
 
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 public class Hours {
 
-    String startHour;
+    private String startHour;
 
-    String startMinute;
+    private String startMinute;
 
-    String endHour;
+    private String endHour;
 
-    String endMinute;
+    private String endMinute;
 }

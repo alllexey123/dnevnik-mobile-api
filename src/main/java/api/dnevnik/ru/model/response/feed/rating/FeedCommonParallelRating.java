@@ -1,12 +1,14 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
-import api.dnevnik.ru.model.response.RatingTrend;
-import lombok.Value;
+import api.dnevnik.ru.model.response.marks.RatingTrend;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedCommonParallelRating {
 
-    RatingTrend trend;
+    private RatingTrend trend;
 
-    FeedRanking parallelRanking;
+    private FeedRanking parallelRanking;
 }

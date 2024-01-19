@@ -1,21 +1,21 @@
 package api.dnevnik.ru.model.response.info;
 
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 public class Period {
 
-    String id;
+    private long id;
 
-    int number;
+    private int number;
 
-    String type;
+    private String type;
 
-    String dateStart;
+    private String dateStart;
 
-    String dateFinish;
+    private String dateFinish;
 
-    int studyYear;
+    private int studyYear;
 
-    boolean isCurrent;
+    private boolean isCurrent;
 }

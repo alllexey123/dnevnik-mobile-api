@@ -1,16 +1,18 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
-import api.dnevnik.ru.model.response.RatingTrend;
-import lombok.Value;
+import api.dnevnik.ru.model.response.marks.RatingTrend;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedCommonGroupRating  {
 
-    RatingTrend trend;
+    private RatingTrend trend;
 
-    FeedRanking groupRanking;
+    private FeedRanking groupRanking;
 
-    List<FeedRankingPlace> rankingPlaces;
+    private List<FeedRankingPlace> rankingPlaces;
 }

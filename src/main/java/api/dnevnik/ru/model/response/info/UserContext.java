@@ -1,6 +1,5 @@
 package api.dnevnik.ru.model.response.info;
 
-import api.dnevnik.ru.model.SubscriptionStatus;
 import api.dnevnik.ru.model.response.BasicResponse;
 import lombok.*;
 import org.jetbrains.annotations.Nullable;
@@ -8,41 +7,36 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
-@Value
+@Data
 public class UserContext extends BasicResponse {
 
-    public UserContext(String type, String description, SubscriptionStatus mobileSubscriptionStatus, Info info, List<Person> contextPersons) {
-        super(type, description, mobileSubscriptionStatus);
-        this.info = info;
-        this.contextPersons = contextPersons;
-    }
+    private Info info;
 
-    Info info;
+    private List<Person> contextPersons;
 
-    List<Person> contextPersons;
     public Person getPerson() {
         return contextPersons.get(0);
     }
 
-    @Value
+    @Data
     public static class Info {
 
-        String sex;
+        private String sex;
 
-        long userId;
+        private long userId;
 
-        long personId;
+        private long personId;
 
-        String firstName;
+        private String firstName;
 
-        String middleName;
+        private String middleName;
 
-        String lastName;
+        private String lastName;
 
         @Nullable
-        String avatarUtl;
+        private String avatarUtl;
 
-        String currentCultureCode;
+        private String currentCultureCode;
     }
 
 }

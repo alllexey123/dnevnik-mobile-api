@@ -1,9 +1,9 @@
 package api.dnevnik.ru.model.response;
 
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 public class MetaData {
 
-    boolean isRestricted;
+    private boolean isRestricted;
 }

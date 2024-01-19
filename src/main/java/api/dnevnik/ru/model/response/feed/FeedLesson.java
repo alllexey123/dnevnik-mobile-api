@@ -1,23 +1,25 @@
 package api.dnevnik.ru.model.response.feed;
 
-import api.dnevnik.ru.model.response.lessons.Subject;
-import lombok.Value;
+import api.dnevnik.ru.model.response.diary.Subject;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.OffsetDateTime;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedLesson {
 
-    long id;
+    private Long id;
 
-    int number;
+    private Integer number;
 
-    String place;
+    private String place;
 
-    OffsetDateTime startTime;
+    private OffsetDateTime startTime;
 
-    OffsetDateTime endTime;
+    private OffsetDateTime endTime;
 
-    Subject subject;
+    private Subject subject;
 
 }

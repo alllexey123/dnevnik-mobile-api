@@ -1,28 +1,28 @@
 package api.dnevnik.ru.model.response.info;
 
-import lombok.Value;
+import lombok.Data;
 import org.jetbrains.annotations.Nullable;
 
-@Value
+@Data
 public class Person {
-    String sex;
+    private String sex;
 
-    long userId;
+    private long userId;
 
-    long personId;
+    private long personId;
 
-    String firstName;
+    private String firstName;
 
-    String middleName;
+    private String middleName;
 
-    String lastName;
+    private String lastName;
 
     @Nullable
-    String avatarUtl;
+    private String avatarUtl;
 
-    Group group;
+    private Group group;
 
-    School school;
+    private School school;
 
-    ReportingPeriodGroup reportingPeriodGroup;
+    private ReportingPeriodGroup reportingPeriodGroup;
 }

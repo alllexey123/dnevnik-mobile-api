@@ -1,15 +1,15 @@
 package api.dnevnik.ru.model.response.info;
 
-import lombok.Value;
+import lombok.Data;
 
 import java.util.List;
 
-@Value
+@Data
 public class ReportingPeriodGroup {
 
-    String id;
+    private String id;
 
-    String type;
+    private String type;
 
-    List<Period> periods;
+    private List<Period> periods;
 }

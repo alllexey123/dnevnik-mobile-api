@@ -1,13 +1,15 @@
 package api.dnevnik.ru.model.response.feed.rating;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class RatingColor {
 
-    String border;
+    private String border;
 
-    String gradientStart;
+    private String gradientStart;
 
-    String gradientEnd;
+    private String gradientEnd;
 }

@@ -1,15 +1,17 @@
 package api.dnevnik.ru.model.response.feed;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedHomeworksProgress {
 
-    int totalLessonsWithHomeworksCount;
+    private Integer totalLessonsWithHomeworksCount;
 
-    int completedLessonsWithHomeworksCount;
+    private Integer completedLessonsWithHomeworksCount;
 
-    List<Long> lessonsWithHomeworksIds;
+    private List<Long> lessonsWithHomeworksIds;
 }

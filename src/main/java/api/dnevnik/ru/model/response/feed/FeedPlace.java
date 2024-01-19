@@ -2,12 +2,14 @@ package api.dnevnik.ru.model.response.feed;
 
 import api.dnevnik.ru.model.response.MetaData;
 import api.dnevnik.ru.model.response.Restrictable;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedPlace implements Restrictable {
 
-    int value;
+    private Integer value;
 
-    MetaData metadata;
+    private MetaData metadata;
 }

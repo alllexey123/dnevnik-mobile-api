@@ -1,25 +1,25 @@
 package api.dnevnik.ru.model.response.info;
 
-import lombok.Value;
+import lombok.Data;
 import org.jetbrains.annotations.Nullable;
 
-@Value
+@Data
 public class School {
 
-    int id;
+    private long id;
 
-    String name;
+    private String name;
 
-    String type;
+    private String type;
 
-    String avatarUrl;
-
-    @Nullable
-    Double radius;
+    private String avatarUrl;
 
     @Nullable
-    Double latitude;
+    private Double radius;
 
     @Nullable
-    Double longitude;
+    private Double latitude;
+
+    @Nullable
+    private Double longitude;
 }

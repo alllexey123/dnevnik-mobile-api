@@ -6,8 +6,7 @@ import api.dnevnik.ru.model.response.info.Person;
 import api.dnevnik.ru.model.response.info.School;
 import api.dnevnik.ru.model.response.info.UserContext;
 
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.OffsetDateTime;
 
 public class DefaultStorage implements Storage {
 
@@ -36,8 +35,8 @@ public class DefaultStorage implements Storage {
     }
 
     @Override
-    public LocalDateTime getAccessTokenExpireDate() {
-        return credentials == null ? LocalDateTime.MIN : credentials.getExpiresDate();
+    public OffsetDateTime getAccessTokenExpireDate() {
+        return credentials == null ? OffsetDateTime.MIN : credentials.getExpiresDate();
     }
 
     @Override
@@ -73,8 +72,32 @@ public class DefaultStorage implements Storage {
     }
 
     @Override
+    public void setAccessToken(String accessToken) {
+        if (this.credentials == null) {
+            this.credentials = new Credentials();
+        }
+        this.credentials.setAccessToken(accessToken);
+    }
+
+    @Override
+    public void setRefreshToken(String refreshToken) {
+        if (this.credentials == null) {
+            this.credentials = new Credentials();
+        }
+        this.credentials.setRefreshToken(refreshToken);
+    }
+
+    @Override
+    public void setAccessTokenExpireDate(OffsetDateTime accessTokenExpireDate) {
+        if (this.credentials == null) {
+            this.credentials = new Credentials();
+        }
+        this.credentials.setExpiresDate(accessTokenExpireDate);
+    }
+
+    @Override
     public boolean isAuthenticated() {
-        return getAccessToken() != null && getAccessTokenExpireDate().isAfter(LocalDateTime.now(ZoneOffset.UTC));
+        return getAccessToken() != null && getAccessTokenExpireDate().isBefore(OffsetDateTime.now());
     }
 
     @Override

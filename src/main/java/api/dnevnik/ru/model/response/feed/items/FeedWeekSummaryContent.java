@@ -1,14 +1,16 @@
 package api.dnevnik.ru.model.response.feed.items;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedWeekSummaryContent implements FeedItemContent {
 
-    LocalDate date;
+    private LocalDate date;
 
-    List<WeekSummary> items;
+    private List<WeekSummary> items;
 }

@@ -1,24 +1,26 @@
 package api.dnevnik.ru.model.response.feed.items;
 
-import api.dnevnik.ru.model.response.AverageMarks;
+import api.dnevnik.ru.model.response.marks.AverageMarks;
 import api.dnevnik.ru.model.response.MetaData;
 import api.dnevnik.ru.model.response.Restrictable;
-import api.dnevnik.ru.model.response.lessons.Subject;
-import lombok.Value;
+import api.dnevnik.ru.model.response.diary.Subject;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
 public class WeekSummary implements Restrictable {
 
-    LocalDate localDate;
+    private LocalDate localDate;
 
-    Subject subject;
+    private Subject subject;
 
-    List<SubjectMark> subjectMarks;
+    private List<SubjectMark> subjectMarks;
 
-    AverageMarks averageMarks;
+    private AverageMarks averageMarks;
 
-    MetaData metadata;
+    private MetaData metadata;
 }

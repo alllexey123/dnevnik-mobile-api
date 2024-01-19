@@ -1,19 +1,21 @@
 package api.dnevnik.ru.model.response.feed.items;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@NoArgsConstructor
 public class FeedBannerContent implements FeedItemContent {
 
-    String bannerId;
+    private String bannerId;
 
-    int maximumViewsCount;
+    private Integer maximumViewsCount;
 
-    String imageUrl;
+    private String imageUrl;
 
-    String internalLink;
+    private String internalLink;
 
-    String externalLink;
+    private String externalLink;
 
-    String linkType;
+    private String linkType;
 }

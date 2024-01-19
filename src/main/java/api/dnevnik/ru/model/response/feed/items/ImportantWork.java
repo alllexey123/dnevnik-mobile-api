@@ -1,26 +1,28 @@
 package api.dnevnik.ru.model.response.feed.items;
 
 import api.dnevnik.ru.model.SummativeMark;
-import api.dnevnik.ru.model.response.AverageMarks;
-import api.dnevnik.ru.model.response.lessons.Subject;
-import lombok.Value;
+import api.dnevnik.ru.model.response.marks.AverageMarks;
+import api.dnevnik.ru.model.response.diary.Subject;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Value
+@Data
+@NoArgsConstructor
 public class ImportantWork {
 
-    LocalDate date;
+    private LocalDate date;
 
-    String workTypeName;
+    private String workTypeName;
 
-    Subject subject;
+    private Subject subject;
 
-    long lessonId;
+    private Long lessonId;
 
-    int lessonNumber;
+    private Integer lessonNumber;
 
-    AverageMarks averageMarks;
+    private AverageMarks averageMarks;
 
-    SummativeMark summativeMarks;
+    private SummativeMark summativeMarks;
 }
