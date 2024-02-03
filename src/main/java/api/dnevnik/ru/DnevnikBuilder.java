@@ -1,6 +1,5 @@
 package api.dnevnik.ru;
 
-import api.dnevnik.ru.networking.AccessTokenInterceptor;
 import api.dnevnik.ru.providers.DefaultDnevnikApiSupplier;
 import api.dnevnik.ru.providers.DefaultGsonSupplier;
 import api.dnevnik.ru.providers.DefaultOkHttpClientSupplier;
@@ -54,7 +53,6 @@ public final class DnevnikBuilder {
     }
 
     public Dnevnik build() {
-        AccessTokenInterceptor interceptor = null;
 
         DnevnikApi api;
         if (apiSupplier != null) {
@@ -66,8 +64,7 @@ public final class DnevnikBuilder {
             } else {
                 if (gsonSupplier == null) gsonSupplier = new DefaultGsonSupplier();
                 Gson gson = gsonSupplier.get();
-                if (okHttpClientSupplier == null) okHttpClientSupplier = new DefaultOkHttpClientSupplier(
-                        interceptor = new AccessTokenInterceptor(() -> null));
+                if (okHttpClientSupplier == null) okHttpClientSupplier = new DefaultOkHttpClientSupplier();
                 OkHttpClient okHttpClient = okHttpClientSupplier.get();
                 retrofit = new DefaultRetrofitSupplier(gson, okHttpClient).get();
             }
@@ -77,10 +74,7 @@ public final class DnevnikBuilder {
         Storage storage;
         if (storageSupplier != null) storage = storageSupplier.get();
         else storage = new DefaultStorage();
-
-        Dnevnik result = new Dnevnik(api, storage);
-        if (interceptor != null) interceptor.setDnevnikSupplier(() -> result);
-        return result;
+        return new Dnevnik(api, storage);
     }
 
 }

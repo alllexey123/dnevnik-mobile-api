@@ -1,5 +1,6 @@
 package api.dnevnik.ru;
 
+import api.dnevnik.ru.exceptions.DnevnikApiException;
 import api.dnevnik.ru.storage.Storage;
 
 public interface IDnevnik {
@@ -12,6 +13,6 @@ public interface IDnevnik {
 
     boolean isAuthenticated();
 
-    String refreshAccessToken();
+    String refreshAccessToken() throws DnevnikApiException;
 
 }

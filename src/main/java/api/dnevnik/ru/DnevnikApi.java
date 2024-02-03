@@ -1,10 +1,13 @@
 package api.dnevnik.ru;
 
-import api.dnevnik.ru.model.request.LoginRequest;
-import api.dnevnik.ru.model.request.ValidatePaymentRequest;
+import api.dnevnik.ru.model.request.*;
 import api.dnevnik.ru.model.response.BasicResponse;
+import api.dnevnik.ru.model.response.EsiaLinkedUsersResponse;
+import api.dnevnik.ru.model.response.EsiaLoginResponse;
+import api.dnevnik.ru.model.response.EsiaRegionsResponse;
 import api.dnevnik.ru.model.response.feed.FeedResponse;
 import api.dnevnik.ru.model.response.info.LoginResponse;
+import api.dnevnik.ru.model.response.info.RefreshTokenResponse;
 import api.dnevnik.ru.model.response.info.UserContext;
 import api.dnevnik.ru.model.response.marks.FinalMarksResponse;
 import api.dnevnik.ru.model.response.marks.PeriodMarksResponse;
@@ -19,21 +22,33 @@ public interface DnevnikApi {
     CompletableFuture<LoginResponse> login(@Body LoginRequest loginRequest);
 
     @GET("/mobile/v8.5/users/{userId}/context")
-    CompletableFuture<UserContext> getUserContext(@Path("userId") Long userId);
+    CompletableFuture<UserContext> getUserContext(@Header("Access-Token") String accessToken, @Path("userId") Long userId);
 
     @POST("/mobile/v8.5/subscriptions/google/validate")
-    CompletableFuture<BasicResponse> validatePayment(@Body ValidatePaymentRequest paramValidatePaymentRequest);
+    CompletableFuture<BasicResponse> validatePayment(@Header("Access-Token") String accessToken, @Body ValidatePaymentRequest paramValidatePaymentRequest);
 
     @GET("/mobile/v8.5/persons/{personId}/groups/{groupId}/important")
-    CompletableFuture<FeedResponse> getUserFeed(@Path("groupId") long groupId, @Path("personId") long personId);
+    CompletableFuture<FeedResponse> getUserFeed(@Header("Access-Token") String accessToken, @Path("personId") long personId, @Path("groupId") long groupId);
 
     @GET("/mobile/v8.5/persons/{personId}/groups/{groupId}/finalMarks")
-    CompletableFuture<FinalMarksResponse> getFinalGrades(@Path("personId") long personId, @Path("groupId") long groupId);
+    CompletableFuture<FinalMarksResponse> getFinalGrades(@Header("Access-Token") String accessToken, @Path("personId") long personId, @Path("groupId") long groupId);
 
     @GET("/mobile/v8.5/persons/{personId}/groups/{groupId}/subjects/{subjectId}/periods/{periodId}/subjectDetails")
-    CompletableFuture<SubjectDetailsResponse> getSubjectDetails(@Path("personId") long personId, @Path("groupId") long groupId, @Path("subjectId") long subjectId, @Path("periodId") long periodId);
+    CompletableFuture<SubjectDetailsResponse> getSubjectDetails(@Header("Access-Token") String accessToken, @Path("personId") long personId, @Path("groupId") long groupId, @Path("subjectId") long subjectId, @Path("periodId") long periodId);
 
     @GET("/mobile/v8.5/persons/{personId}/groups/{groupId}/periods/{periodId}/periodMarks")
-    CompletableFuture<PeriodMarksResponse> getPeriodMarks(@Path("personId") long personId, @Path("groupId") long groupId, @Path("periodId") long periodId);
+    CompletableFuture<PeriodMarksResponse> getPeriodMarks(@Header("Access-Token") String accessToken, @Path("personId") long personId, @Path("groupId") long groupId, @Path("periodId") long periodId);
+
+    @POST("/mobile/v8.5/authorizations/byrefreshtoken")
+    CompletableFuture<RefreshTokenResponse> refreshToken(@Body RefreshTokenRequest refreshTokenRequest);
+
+    @POST("/mobile/v8.5/authorizations/esia/")
+    CompletableFuture<EsiaLoginResponse> esiaLogin(@Body EsiaLoginRequest esiaLoginRequest);
+
+    @POST("/mobile/v8.5/authorizations/esia/users/linked")
+    CompletableFuture<EsiaLinkedUsersResponse> getEsiaLinkedUsers(@Body EsiaTaskWrapper esiaTaskWrapper);
+
+    @GET("/mobile/v8.5/authorizations/esia/regions")
+    CompletableFuture<EsiaRegionsResponse> getEsiaRegions();
 
 }

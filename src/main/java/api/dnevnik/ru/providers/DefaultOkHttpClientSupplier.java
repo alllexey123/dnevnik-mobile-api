@@ -1,6 +1,5 @@
 package api.dnevnik.ru.providers;
 
-import api.dnevnik.ru.networking.AccessTokenInterceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 
@@ -8,12 +7,8 @@ import java.util.function.Supplier;
 
 public class DefaultOkHttpClientSupplier implements Supplier<OkHttpClient> {
 
-    private final AccessTokenInterceptor accessTokenInterceptor;
-
-    public DefaultOkHttpClientSupplier(AccessTokenInterceptor accessTokenInterceptor) {
-        this.accessTokenInterceptor = accessTokenInterceptor;
+    public DefaultOkHttpClientSupplier() {
     }
-
 
     @Override
     public OkHttpClient get() {
@@ -22,7 +17,6 @@ public class DefaultOkHttpClientSupplier implements Supplier<OkHttpClient> {
 
         return new OkHttpClient.Builder()
                 .addInterceptor(logging)
-                .addInterceptor(accessTokenInterceptor)
                 .build();
     }
 }

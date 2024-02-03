@@ -18,6 +18,10 @@ public class UserContext extends BasicResponse {
         return contextPersons.get(0);
     }
 
+    public List<Period> getPeriods() {
+        return getPerson().getReportingPeriodGroup().getPeriods();
+    }
+
     @Data
     public static class Info {
 

@@ -1,10 +1,6 @@
 package api.dnevnik.ru.storage;
 
-import api.dnevnik.ru.model.response.info.Credentials;
-import api.dnevnik.ru.model.response.info.Group;
-import api.dnevnik.ru.model.response.info.Person;
-import api.dnevnik.ru.model.response.info.School;
-import api.dnevnik.ru.model.response.info.UserContext;
+import api.dnevnik.ru.model.response.info.*;
 
 import java.time.OffsetDateTime;
 
@@ -69,6 +65,18 @@ public class DefaultStorage implements Storage {
     @Override
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
+    }
+
+    @Override
+    public void setExtendedCredentials(ExtendedCredentials extendedCredentials) {
+        if (this.credentials == null) {
+            this.credentials = new Credentials();
+        }
+        this.credentials.setUserId(extendedCredentials.getUser());
+        this.credentials.setAccessToken(extendedCredentials.getAccessToken());
+        this.credentials.setScope(extendedCredentials.getScope());
+        this.credentials.setExpiresDate(extendedCredentials.getExpireDate());
+        this.credentials.setRefreshToken(extendedCredentials.getRefreshToken());
     }
 
     @Override

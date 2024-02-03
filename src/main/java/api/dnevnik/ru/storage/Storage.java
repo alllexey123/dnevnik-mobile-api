@@ -1,10 +1,6 @@
 package api.dnevnik.ru.storage;
 
-import api.dnevnik.ru.model.response.info.Credentials;
-import api.dnevnik.ru.model.response.info.Group;
-import api.dnevnik.ru.model.response.info.Person;
-import api.dnevnik.ru.model.response.info.School;
-import api.dnevnik.ru.model.response.info.UserContext;
+import api.dnevnik.ru.model.response.info.*;
 
 import java.time.OffsetDateTime;
 
@@ -37,6 +33,8 @@ public interface Storage {
     void setRefreshToken(String refreshToken);
 
     void setAccessTokenExpireDate(OffsetDateTime accessTokenExpireDate);
+
+    void setExtendedCredentials(ExtendedCredentials extendedCredentials);
 
     boolean isAuthenticated();
 

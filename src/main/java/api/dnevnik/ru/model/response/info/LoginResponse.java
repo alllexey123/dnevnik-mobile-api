@@ -8,10 +8,10 @@ import lombok.*;
 @NoArgsConstructor
 public class LoginResponse extends BasicResponse {
 
-    Credentials credentials;
+    private Credentials credentials;
 
-    String reason;
+    private String reason;
 
-    String teacherAppLink;
+    private String teacherAppLink;
 
 }
