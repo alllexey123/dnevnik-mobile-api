@@ -68,18 +68,6 @@ public class DefaultStorage implements Storage {
     }
 
     @Override
-    public void setExtendedCredentials(ExtendedCredentials extendedCredentials) {
-        if (this.credentials == null) {
-            this.credentials = new Credentials();
-        }
-        this.credentials.setUserId(extendedCredentials.getUser());
-        this.credentials.setAccessToken(extendedCredentials.getAccessToken());
-        this.credentials.setScope(extendedCredentials.getScope());
-        this.credentials.setExpiresDate(extendedCredentials.getExpireDate());
-        this.credentials.setRefreshToken(extendedCredentials.getRefreshToken());
-    }
-
-    @Override
     public void setAccessToken(String accessToken) {
         if (this.credentials == null) {
             this.credentials = new Credentials();

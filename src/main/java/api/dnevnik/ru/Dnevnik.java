@@ -121,7 +121,7 @@ public class Dnevnik implements IDnevnik, AccessTokenProvider {
      * @return login response with credentials
      * @throws DnevnikApiException if an error occurs
      */
-    public ExtendedCredentials esiaAuth(@NotNull String esiaTaskId, int regionId) throws DnevnikApiException {
+    public Credentials esiaAuth(@NotNull String esiaTaskId, int regionId) throws DnevnikApiException {
         EsiaTaskWrapper esiaTaskWrapper = EsiaTaskWrapper.builder()
                 .taskId(esiaTaskId)
                 .regionId(regionId).build();
@@ -134,8 +134,8 @@ public class Dnevnik implements IDnevnik, AccessTokenProvider {
                 .taskId(esiaTaskId)
                 .regionId(regionId).build();
         EsiaLoginResponse loginResponse = executeSync(api().esiaLogin(loginRequest));
-        ExtendedCredentials authorization = loginResponse.getAuthorization();
-        storage.setExtendedCredentials(authorization);
+        Credentials authorization = loginResponse.getAuthorization();
+        storage.setCredentials(authorization);
         return authorization;
     }
 
@@ -297,7 +297,7 @@ public class Dnevnik implements IDnevnik, AccessTokenProvider {
             if (this.hasRefreshToken() && !OffsetDateTime.now().isBefore(expireDate)) {
                 try {
                     this.refreshAccessToken();
-                } catch (DnevnikApiException e) {
+                } catch (DnevnikApiException ignored) {
                 }
             }
         }

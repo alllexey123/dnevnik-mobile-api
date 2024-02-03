@@ -1,10 +1,8 @@
 package api.dnevnik.ru.providers;
 
 import api.dnevnik.ru.model.response.feed.items.FeedItem;
-import api.dnevnik.ru.utils.FeedItemDeserializer;
-import api.dnevnik.ru.utils.LocalDateDeserializer;
-import api.dnevnik.ru.utils.LocalDateTimeDeserializer;
-import api.dnevnik.ru.utils.OffsetDateTimeDeserializer;
+import api.dnevnik.ru.model.response.info.Credentials;
+import api.dnevnik.ru.utils.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -18,6 +16,7 @@ public class DefaultGsonSupplier implements Supplier<Gson> {
     public Gson get() {
         return new GsonBuilder()
 //                .setPrettyPrinting()
+                .registerTypeAdapter(Credentials.class, new CredentialsDeserializer())
                 .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer())
                 .registerTypeAdapter(LocalDate.class, new LocalDateDeserializer())
                 .registerTypeAdapter(OffsetDateTime.class, new OffsetDateTimeDeserializer())

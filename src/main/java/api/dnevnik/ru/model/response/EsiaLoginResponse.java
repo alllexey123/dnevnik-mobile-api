@@ -1,6 +1,6 @@
 package api.dnevnik.ru.model.response;
 
-import api.dnevnik.ru.model.response.info.ExtendedCredentials;
+import api.dnevnik.ru.model.response.info.Credentials;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 @Data
 public class EsiaLoginResponse extends BasicResponse {
 
-    private ExtendedCredentials authorization;
+    private Credentials authorization;
 
     private EsiaStatus status;
 

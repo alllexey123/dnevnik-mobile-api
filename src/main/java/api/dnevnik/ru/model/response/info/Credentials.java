@@ -1,6 +1,7 @@
 package api.dnevnik.ru.model.response.info;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.OffsetDateTime;
 

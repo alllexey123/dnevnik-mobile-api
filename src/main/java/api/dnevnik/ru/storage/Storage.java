@@ -34,8 +34,6 @@ public interface Storage {
 
     void setAccessTokenExpireDate(OffsetDateTime accessTokenExpireDate);
 
-    void setExtendedCredentials(ExtendedCredentials extendedCredentials);
-
     boolean isAuthenticated();
 
     boolean hasRefreshToken();

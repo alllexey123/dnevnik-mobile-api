@@ -1,7 +1,9 @@
 package api.dnevnik.ru.model.response.info;
 
 import api.dnevnik.ru.model.response.BasicResponse;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
