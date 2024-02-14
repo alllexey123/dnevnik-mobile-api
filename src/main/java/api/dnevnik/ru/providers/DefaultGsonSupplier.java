@@ -1,8 +1,8 @@
 package api.dnevnik.ru.providers;
 
-import api.dnevnik.ru.model.response.feed.items.FeedItem;
-import api.dnevnik.ru.model.response.info.Credentials;
-import api.dnevnik.ru.utils.*;
+import api.dnevnik.ru.deserializers.*;
+import api.dnevnik.ru.model.objects.feed.items.FeedItem;
+import api.dnevnik.ru.model.objects.info.Credentials;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

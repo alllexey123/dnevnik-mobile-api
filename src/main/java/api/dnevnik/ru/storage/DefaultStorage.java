@@ -1,6 +1,6 @@
 package api.dnevnik.ru.storage;
 
-import api.dnevnik.ru.model.response.info.*;
+import api.dnevnik.ru.model.objects.info.*;
 
 import java.time.OffsetDateTime;
 

@@ -1,6 +1,5 @@
 package api.dnevnik.ru.model.response;
 
-import api.dnevnik.ru.model.SubscriptionStatus;
 import lombok.*;
 
 @Data

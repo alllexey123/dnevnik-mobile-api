@@ -1,16 +1,15 @@
 package api.dnevnik.ru;
 
 import api.dnevnik.ru.exceptions.DnevnikApiException;
+import api.dnevnik.ru.model.objects.info.Credentials;
+import api.dnevnik.ru.model.objects.info.User;
+import api.dnevnik.ru.model.objects.info.UserContext;
 import api.dnevnik.ru.model.request.*;
-import api.dnevnik.ru.model.response.BasicResponse;
-import api.dnevnik.ru.model.response.EsiaLinkedUsersResponse;
-import api.dnevnik.ru.model.response.EsiaLoginResponse;
-import api.dnevnik.ru.model.response.EsiaRegionsResponse;
-import api.dnevnik.ru.model.response.feed.FeedResponse;
-import api.dnevnik.ru.model.response.info.*;
-import api.dnevnik.ru.model.response.marks.FinalMarksResponse;
-import api.dnevnik.ru.model.response.marks.PeriodMarksResponse;
-import api.dnevnik.ru.model.response.marks.SubjectDetailsResponse;
+import api.dnevnik.ru.model.response.*;
+import api.dnevnik.ru.model.objects.feed.FeedResponse;
+import api.dnevnik.ru.model.response.FinalMarksResponse;
+import api.dnevnik.ru.model.response.PeriodMarksResponse;
+import api.dnevnik.ru.model.response.SubjectDetailsResponse;
 import api.dnevnik.ru.providers.AccessTokenProvider;
 import api.dnevnik.ru.storage.Storage;
 import org.jetbrains.annotations.NotNull;

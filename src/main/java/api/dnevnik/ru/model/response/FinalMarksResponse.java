@@ -1,6 +1,6 @@
 package api.dnevnik.ru.model.response;
 
-import api.dnevnik.ru.model.objects.info.User;
+import api.dnevnik.ru.model.objects.marks.finals.FinalMark;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class EsiaLinkedUsersResponse extends BasicResponse {
+public class FinalMarksResponse extends BasicResponse {
 
-    private List<User> users;
+    private List<FinalMark> finalMarks;
 }

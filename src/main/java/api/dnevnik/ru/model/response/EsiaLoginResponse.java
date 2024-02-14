@@ -1,6 +1,6 @@
 package api.dnevnik.ru.model.response;
 
-import api.dnevnik.ru.model.response.info.Credentials;
+import api.dnevnik.ru.model.objects.info.Credentials;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

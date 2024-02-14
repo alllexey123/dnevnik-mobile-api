@@ -1,6 +1,6 @@
 package api.dnevnik.ru.model.response;
 
-import api.dnevnik.ru.model.response.info.Region;
+import api.dnevnik.ru.model.objects.info.Region;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
