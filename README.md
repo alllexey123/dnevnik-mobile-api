@@ -1,14 +1,13 @@
-# Dnevnik.ru API Java Library
+<h1 align = "center">Java Dnevnik Ru Mobile API</h1>
+<p align = "center">Оболочка для удобного использования <strong>мобильного</strong> API Дневника на Java</p>
 
-A Java library for [Dnevnik.ru](https://dnevnik.ru/) mobile API.
+**В стадии разработки...**
 
-**Under active development.**
-
-## Third-party dependencies
-
-- `OkHttp`
+## Зависимости
 - `Retrofit`
 - `Gson`
+- `RxJava3`
+- `Lombok`
 
-## Requirements
-1. Java 8+
+## Документация
+Официальная документация **отсутствует**
