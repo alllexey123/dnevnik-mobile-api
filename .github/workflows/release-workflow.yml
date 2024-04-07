@@ -17,10 +17,10 @@ jobs:
           java-version: '8'
           check-latest: true
           server-id: 'ossrh'
-          server-username: OSSRH_USERNAME
-          server-password: OSSRH_PASSWORD
+          server-username: ${{ secrets.OSSRH_USERNAME }}
+          server-password: ${{ secrets.OSSRH_TOKEN }}
           gpg-private-key: ${{ secrets.GPG_SECRET_KEY }}
-          gpg-passphrase: SIGN_KEY_PASS
+          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
           cache: 'maven'
       - name: Build & Deploy
         run: |
@@ -28,7 +28,3 @@ jobs:
           # -B Batch mode (do not ask for user input), just in case
           # -P activate profile
           mvn -U -B clean deploy
-        env:
-          SIGN_KEY_PASS: ${{ secrets.GPG_PASSPHRASE }}
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
