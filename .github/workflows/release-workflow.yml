@@ -1,4 +1,4 @@
-name: release-workflow # You may choose a different nam
+name: release-workflow
 run-name: Release run ${{ github.run_number }} # Enumerates entries in the "workflow runs" view
 on:
   workflow_dispatch: # Only run when manually started
