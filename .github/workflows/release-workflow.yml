@@ -22,13 +22,12 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_SECRET_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
           cache: 'maven'
-      - run: cat <(echo -e "${{ secrets.OSSRH_USERNAME }}")
       - name: Build & Deploy
         run: |
           # -U force updates just to make sure we are using latest dependencies
           # -B Batch mode (do not ask for user input), just in case
           # -P activate profile
-          mvn clean deploy
+          mvn -U -P clean deploy
         env:
             MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
             MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
