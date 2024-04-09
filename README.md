@@ -40,7 +40,7 @@ Dnevnik dnevnik = Dnevnik.create();
     ```java
     dnevnik.getStorage().setCredentials(credentials);
     dnevnik.auth("my_cool_username", "my_strong_password")
-        .blockingSubscribe(r -> {}, Throwable::printStackTrace); // print access token expire date (example)
+        .blockingSubscribe(r -> {}, Throwable::printStackTrace);
     ```
    * Вход через Госуслуги:
     ```java
