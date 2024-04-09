@@ -1,5 +1,7 @@
 package api.dnevnik.mobile;
 
+import api.dnevnik.mobile.model.objects.diary.DiaryDirection;
+import api.dnevnik.mobile.model.objects.diary.DiaryResponse;
 import api.dnevnik.mobile.model.objects.feed.FeedResponse;
 import api.dnevnik.mobile.model.objects.info.UserContext;
 import api.dnevnik.mobile.model.request.*;
@@ -42,5 +44,11 @@ public interface DnevnikApi {
 
     @GET("/mobile/v8.5/authorizations/esia/regions")
     Single<EsiaRegionsResponse> getEsiaRegions();
+
+    // if direction is passed, then id should be passed as well (id is the date of the first day of the week in format "yyyy-MM-dd", relative to which we want to get the previous/next week)
+    @GET("/mobile/v8.6/persons/{personId}/schools/{schoolId}/groups/{groupId}/diary")
+    Single<DiaryResponse> getDiary(@Header("Access-Token") String accessToken, @Path("personId") long personId, @Path("schoolId") long schoolId, @Path("groupId") long groupId, @Query("id") String id, @Query("loadType") DiaryDirection direction);
+
+
 
 }

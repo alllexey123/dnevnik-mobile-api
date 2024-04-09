@@ -1,6 +1,8 @@
 package api.dnevnik.mobile;
 
 import api.dnevnik.mobile.exceptions.DnevnikException;
+import api.dnevnik.mobile.model.objects.diary.DiaryDirection;
+import api.dnevnik.mobile.model.objects.diary.DiaryResponse;
 import api.dnevnik.mobile.model.objects.feed.FeedResponse;
 import api.dnevnik.mobile.model.objects.info.Credentials;
 import api.dnevnik.mobile.model.objects.info.User;
@@ -212,6 +214,24 @@ public class Dnevnik implements IDnevnik {
     }
 
     /**
+     * <strong>Requires: access token, person id, school id and group id</strong><br>
+     * If id and direction are null, the current week is returned
+     * @param id the date of the first day of the week to receive the next/previous weeks data relative to that week ("yyyy-MM-dd")
+     * @param diaryDirection time direction
+     * @return diary weeks data
+     */
+    public Single<DiaryResponse> getDiary(String id, DiaryDirection diaryDirection) {
+        return api.getDiary(getOrUpdateAccessToken(), getPersonId(), getSchoolId(), getGroupId(), id, diaryDirection);
+    }
+
+    /**
+     * <strong>Requires: access token, person id, school id and group id</strong><br>
+     * @return relevant diary weeks data
+     */
+    public Single<DiaryResponse> getRelevantDiary() {
+        return getDiary(null, null);
+    }
+    /**
      * Updates the access token and refresh token. Saves them to a storage for later use in other methods.
      * <br>
      * <strong>Requires: refresh token</strong>
@@ -253,6 +273,12 @@ public class Dnevnik implements IDnevnik {
         if (storage.getGroup() == null)
             throw new IllegalStateException("group id is required, try to use the updateUserContext()");
         return storage.getGroup().getId();
+    }
+
+    public long getSchoolId() {
+        if (storage.getGroup() == null)
+            throw new IllegalStateException("school id is required, try to use the updateUserContext()");
+        return storage.getSchool().getId();
     }
 
     public String getOrUpdateAccessToken() {

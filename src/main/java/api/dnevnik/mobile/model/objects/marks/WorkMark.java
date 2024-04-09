@@ -9,5 +9,5 @@ public class WorkMark {
 
     private List<Mark> marks;
 
-    private Long workId;
+    private long workId;
 }
