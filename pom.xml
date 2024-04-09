@@ -6,9 +6,10 @@
 
     <groupId>io.github.alllexey123</groupId>
     <artifactId>dnevnik-mobile-api</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>dnevnik-mobile-api</name>
+    <description>a library created to simplify access to dnevnik.ru mobile API</description>
     <url>https://github.com/alllexey123/dnevnik-mobile-api</url>
 
     <licenses>
